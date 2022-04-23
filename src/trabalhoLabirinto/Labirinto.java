@@ -1,13 +1,29 @@
 package trabalhoLabirinto;
 
-import java.util.Stack;
-
 public class Labirinto {
 
-    private String labirinto[][];
-    private int CoordX;
-    private int CoordY;
-    private Stack;
+
+    private int CoordX = 1;
+    private int CoordY = 1;
+    private String parede = "#";
+
+
+
+    private String labirinto [][]  = {
+      //{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+        {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#"}, //0
+        {"#", "E", ".", ".", ".", "#", ".", "#", "S", "#"}, //1
+        {"#", "#", "#", "#", ".", "#", ".", "#", ".", "#"}, //2
+        {"#", ".", ".", ".", ".", "#", ".", ".", ".", "#"}, //3
+        {"#", ".", "#", "#", "#", ".", ".", "#", ".", "#"}, //4
+        {"#", ".", ".", ".", "#", ".", "#", ".", ".", "#"}, //5
+        {"#", "#", "#", ".", "#", ".", "#", ".", ".", "#"}, //6
+        {"#", ".", "#", ".", ".", ".", "#", "#", ".", "#"}, //7
+        {"#", ".", ".", ".", "#", ".", ".", ".", "#", "#"}, //8
+        {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#"}  //9
+    };
+
+
 
 
 
@@ -15,24 +31,32 @@ public class Labirinto {
     //caminho livre = .
     //E = entrada,  S = saida
     //caminho passado V
+    //start (1,1) end (1,8)
 
 
+    public void printLabirinto (){
+        for (int x = 0; x < labirinto.length; x++){
+            for (int y = 0; y < labirinto.length; y++){
+                System.out.print(labirinto[x][y] + " ");
+            }
+            System.out.println();
+        }
+    }
 
-    public Labirinto() {
-        labirinto = new String[CoordX][CoordY]{
-              //{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
-                {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#"}, //0
-                {"E", ".", ".", ".", ".", "#", ".", "#", ".", "S"}, //1
-                {"#", "#", "#", "#", ".", "#", ".", "#", ".", "#"}, //2
-                {"#", ".", ".", ".", ".", "#", ".", ".", ".", "#"}, //3
-                {"#", ".", "#", "#", "#", ".", ".", "#", ".", "#"}, //4
-                {"#", ".", ".", ".", "#", ".", "#", ".", ".", "#"}, //5
-                {"#", "#", "#", ".", "#", ".", "#", ".", ".", "#"}, //6
-                {"#", ".", "#", ".", ".", ".", "#", "#", ".", "#"}, //7
-                {"#", ".", ".", ".", "#", ".", ".", ".", "#", "#"}, //8
-                {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#"}, //9
+    public int getCoordX() {
+        return CoordX;
+    }
 
-        };
+    public void setCoordX(int coordX) {
+        CoordX = coordX;
+    }
+
+    public int getCoordY() {
+        return CoordY;
+    }
+
+    public void setCoordY(int coordY) {
+        CoordY = coordY;
     }
 
 }
