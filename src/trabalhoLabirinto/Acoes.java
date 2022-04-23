@@ -1,48 +1,55 @@
 package trabalhoLabirinto;
 
 public class Acoes extends Labirinto{
-    //StaticaStack caminho = new StaticaStack(64);
     PilhaLinha pilhaX = new PilhaLinha();
     PilhaColuna pilhaY = new PilhaColuna();
-   // Labirinto labirinto = new Labirinto();
+    private boolean anda;
 
-    public void validaMovimento (String[][] labirinto, String parede) {
-        for (int i = 0; i < labirinto.length; ++i) {
-            if (labirinto[i].equals(parede)) {
-                //nao anda
+
+//valida o movimento vendo se tem parede(#),
+//(V) caminho ja passado ou (.) caminho livre
+//precisa decidir pra onde vai quando todos os caminhos ja foram visitados
+    public void validaMovimento () {
+        for (int i = 0; i < getLabirinto().length; ++i) {
+            if (getLabirinto()[i].equals(getParede())) {
+                anda = false;
             }else {
-                //anda
+                anda = true;
             }
         }
-
     }
-
-
 
     public void esquerda (){
         setCoordX(getCoordX() - 1);
-        pilhaX.push(getCoordX());
-        pilhaY.push(getCoordY());
-
+        validaMovimento();
+        if (anda == true) {
+            pilhaX.push(getCoordX());
+            pilhaY.push(getCoordY());
+        }
     }
 
     public void baixo (){
         setCoordY(getCoordY() + 1);
-        pilhaX.push(getCoordX());
-        pilhaY.push(getCoordY());
-
+        if (anda == true) {
+            pilhaX.push(getCoordX());
+            pilhaY.push(getCoordY());
+        }
     }
 
-    public void direita (){
+    public void direita () {
         setCoordX(getCoordX() + 1);
-        pilhaX.push(getCoordX());
-        pilhaY.push(getCoordY());
+        if (anda == true) {
+            pilhaX.push(getCoordX());
+            pilhaY.push(getCoordY());
+        }
     }
 
-    public void cima (){
+    public void cima(){
         setCoordY(getCoordY() - 1);
-        pilhaX.push(getCoordX());
-        pilhaY.push(getCoordY());
+        if (anda == true) {
+            pilhaX.push(getCoordX());
+            pilhaY.push(getCoordY());
+        }
     }
 
     public void voltar (){
@@ -51,12 +58,6 @@ public class Acoes extends Labirinto{
 
         getCoordX();
         getCoordY();
-
-    }
-
-    @Override
-    public String toString() {
-        return this.pilhaX.top()+"";
     }
 
 

@@ -7,6 +7,10 @@ public class Labirinto {
     private int CoordY = 1;
     private String parede = "#";
 
+    //caminho livre = .
+    //E = entrada,  S = saida
+    //caminho passado V
+    //start (1,1) end (1,8)
 
 
     private String labirinto [][]  = {
@@ -22,16 +26,6 @@ public class Labirinto {
         {"#", ".", ".", ".", "#", ".", ".", ".", "#", "#"}, //8
         {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#"}  //9
     };
-
-
-
-
-
-    //parede = #
-    //caminho livre = .
-    //E = entrada,  S = saida
-    //caminho passado V
-    //start (1,1) end (1,8)
 
 
     public void printLabirinto (){
@@ -59,4 +53,15 @@ public class Labirinto {
         CoordY = coordY;
     }
 
+    public String[][] getLabirinto() {
+        return labirinto;
+    }
+
+    public void setLabirinto(String[][] labirinto) {
+        this.labirinto = labirinto;
+    }
+
+    public String getParede() {
+        return parede;
+    }
 }
