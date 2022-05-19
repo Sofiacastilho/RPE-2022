@@ -5,6 +5,7 @@ public class StaticStack extends AbstractStack {
         super(capacity);
     }
 
+
     public void push(int element) {
         if(isFull()) {
             throw new IllegalStateException("Stack is full");
