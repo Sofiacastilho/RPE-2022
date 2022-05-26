@@ -1,12 +1,14 @@
 package trabalhoFila;
 
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Scanner;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
+
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Labirinto labirinto = new Labirinto();
         Scanner scanner = new Scanner(System.in);
 
@@ -23,8 +25,10 @@ public class Main {
 
             System.out.println("Nesse labirinto, você digitará os comandos, e somente ao final verá se chegou  na saída!\n" +
                     "Quando estiver certo de que chegou ao final, digite 'FIM' e o caminho será verificado.\n" +
-                    "Se quiser reiniciar, digite um 'RESET' e o caminho será resetado, boa sorte!\n" +
+                    "Se quiser reiniciar, digite  'RESET' e o caminho será resetado, boa sorte!\n" +
                     "-----------------------------------");
+
+            MILLISECONDS.sleep(3000 );
 
             labirinto.encontrarEntrada();
 
@@ -35,9 +39,8 @@ public class Main {
                         "C - cima\n" +
                         "B - baixo");
                 System.out.println("Comandos empilhados: " + comandosEmpilhados++);
-                System.out.println("Para qual lado vai andar?");
-                //System.out.println(labirinto.filaLinha.toString());
-                //System.out.println(labirinto.filaColuna.toString());
+                System.out.println("Digite seu comando: ");
+
 
                 comando = scanner.nextLine().toUpperCase(Locale.ROOT);
 
@@ -57,6 +60,7 @@ public class Main {
                 }else if (comando.equalsIgnoreCase("RESET")) {
                     labirinto.filaColuna.clear();
                     labirinto.filaLinha.clear();
+                    labirinto.encontrarEntrada();
                     comandosEmpilhados = 0;
 
                 } else if (comando.equalsIgnoreCase("FIM")) {
@@ -67,7 +71,8 @@ public class Main {
                 }
 
             }
-            labirinto.printLabirinto();
+
+            labirinto.verificaCaminho();
 
         }
         System.exit(0);

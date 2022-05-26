@@ -2,6 +2,9 @@ package trabalhoFila;
 
 import java.util.Objects;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
+
 public class Labirinto {
     private int linha;
     private int coluna;
@@ -24,32 +27,47 @@ public class Labirinto {
     };
 
 
+    /*String[][] map = {
+            {"#","#","#","#","#","#","#","#","#","#"},
+            {"#","E","#"," "," ","#"," "," "," ","#"},
+            {"#"," ","#"," ","#","#","#"," ","#","#"},
+            {"#"," ","#"," ","#","#","#"," ","#","#"},
+            {"#"," ","#"," ","#","#","#"," ","#","#"},
+            {"#"," ","#"," "," "," ","#","#","#","#"},
+            {"#"," "," "," ","#"," "," "," ","S","#"},
+            {"#"," ","#","#","#"," ","#"," ","#","#"},
+            {"#"," ","#","#","#"," ","#"," ","#","#"},
+            {"#","#","#","#","#","#","#","#","#","#"}
+
+    };*/
+
+
     public void esquerda (){
         linha = linha -1;
         filaLinha.add(linha);
         filaColuna.add(coluna);
-        map[coluna][linha] = "-"; //eu nao entendi pq tem que ser assim, mas se eu coloco [linha][coluna] ele vai ao contrario ????
+        //map[coluna][linha] = "-"; //eu nao entendi pq tem que ser assim, mas se eu coloco [linha][coluna] ele vai ao contrario ????
     }
 
     public void baixo (){
         coluna = coluna + 1;
         filaLinha.add(linha);
         filaColuna.add(coluna);
-        map[coluna][linha] = "-";
+        //map[coluna][linha] = "-";
     }
 
     public void direita () {
         linha = linha + 1;
         filaLinha.add(linha);
         filaColuna.add(coluna);
-        map[coluna][linha] = "-";
+       // map[coluna][linha] = "-";
     }
 
     public void cima(){
        coluna = coluna - 1;
        filaLinha.add(linha);
        filaColuna.add(coluna);
-        map[coluna][linha] = "-";
+        //map[coluna][linha] = "-";
     }
 
     public void encontrarEntrada() {
@@ -75,9 +93,33 @@ public class Labirinto {
         return false;
     }
 
-    public void verificaCaminho(){
+    public void verificaCaminho() throws InterruptedException {
+        while (Objects.equals(map[coluna][linha], "S")){
 
-        map[coluna][linha] = "-";
+
+            System.out.println(filaLinha.toString());
+            System.out.println(filaColuna.toString());
+            int baseLinha = filaLinha.remove();
+            int baseColuna = filaColuna.remove();
+
+
+            MILLISECONDS.sleep(500 );
+
+            if(filaColuna.isEmpty() && Objects.equals(map[coluna][linha], "S")){
+                System.out.println("Parabéns, você encontrou a saída");
+
+            }else if (filaColuna.isEmpty()){
+                System.out.println("Não encontrou a saída :(");
+            }
+
+            map[baseColuna][baseLinha] = "-";
+
+            printLabirinto();
+        }
+
+
+
+
     }
 
 
