@@ -3,13 +3,15 @@ package trabalhoLabirintoTentativaDeResolucao;
 public class Main {
 
     public static void main(String[] args) {
-        Labirinto labirinto = new Labirinto();
-
-        Acoes acao = new Acoes();
+        Andarilho andarilho = new Andarilho();
 
 
+        andarilho.encontrarEntrada();
+        andarilho.anda();
 
-        System.out.println(labirinto.map[0][0]);
+
+
+
     }
 
 }

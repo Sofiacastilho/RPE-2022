@@ -10,7 +10,7 @@ public class StaticList {
 
     public void clear(){
         for (int i = 0; i < data.length; i++){
-            data[i] = ;
+            data[i] = 0;
         }
         data = null;
     }
@@ -29,7 +29,7 @@ public class StaticList {
         }
 
         for (int i = data.length - 1; i >= pos; i--) {
-            data[i + 1] = data[i];
+            data[i] = data[i];
         }
 
         data[pos] = element;
@@ -80,7 +80,7 @@ public class StaticList {
         return data.length;
     }
 
-    public int find(int data){
+    /*public int find(int data){
         if(isEmpty()) {
             throw new IllegalStateException("List is empty!");
         }
@@ -93,7 +93,7 @@ public class StaticList {
 
 
         return -1;
-    }
+    }*/
 
     @Override
     public String toString(){

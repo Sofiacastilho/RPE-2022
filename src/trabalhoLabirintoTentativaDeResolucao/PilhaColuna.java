@@ -10,8 +10,7 @@ public class PilhaColuna {
         this.pilhaColuna = new Object[100];
     }
 
-    public boolean pilhaVazia() {
-        //isEmpty
+    public boolean isEmpty() {
         if (this.posicaoPilhaColuna == -1) {
             return true;
         }
@@ -19,21 +18,21 @@ public class PilhaColuna {
     }
 
     public int getSize() {
-        if (this.pilhaVazia()) {
+        if (this.isEmpty()) {
             return 0;
         }
         return this.posicaoPilhaColuna + 1;
     }
 
     public Object top() {
-        if (this.pilhaVazia()) {
+        if (this.isEmpty()) {
             return null;
         }
         return this.pilhaColuna[this.posicaoPilhaColuna];
     }
 
     public Object pop() {
-        if (pilhaVazia()) {
+        if (isEmpty()) {
             return null;
         }
         return this.pilhaColuna[this.posicaoPilhaColuna--];
@@ -43,6 +42,17 @@ public class PilhaColuna {
         if (this.posicaoPilhaColuna < this.pilhaColuna.length - 1) {
             this.pilhaColuna[++posicaoPilhaColuna] = valor;
         }
+    }
+
+    @Override
+    public String toString() {
+        String out = "[";
+        if(getSize() > 0) {
+            out += this.pilhaColuna[0];
+        }
+
+        out += "]";
+        return out;
     }
 
 }

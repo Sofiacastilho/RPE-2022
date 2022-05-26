@@ -23,14 +23,16 @@ public class Labirinto {
     };
 
 
-    /*public void printLabirinto (){
-        for (int x = 0; x < labirinto.length; x++){
-            for (int y = 0; y < labirinto.length; y++){
-                System.out.print(labirinto[x][y] + " ");
+    public void printLabirinto (){
+        for (int x = 0; x < map.length; x++){
+            for (int y = 0; y < map.length; y++){
+                System.out.print(map[x][y] + " ");
             }
             System.out.println();
         }
-    }*/
+        System.out.println("--------------------------");
+
+    }
 
 
 

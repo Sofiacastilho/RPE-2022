@@ -3,15 +3,15 @@ package trabalhoLabirintoTentativaDeResolucao;
 public class PilhaLinha {
 
     private Object[] pilhaLinha;
-    private int posicacaoPilhaColuna;
+    private int posicaoPilhaLinha;
 
     public PilhaLinha() {
-        this.posicacaoPilhaColuna = -1;
+        this.posicaoPilhaLinha = -1;
         this.pilhaLinha = new Object[100];
     }
 
     public boolean isEmpty() {
-        if (this.posicacaoPilhaColuna == -1) {
+        if (this.posicaoPilhaLinha == -1) {
             return true;
         }
         return false;
@@ -21,29 +21,37 @@ public class PilhaLinha {
         if (this.isEmpty()) {
             return 0;
         }
-        return this.posicacaoPilhaColuna + 1;
+        return this.posicaoPilhaLinha + 1;
     }
 
     public Object top() {
         if (this.isEmpty()) {
             return null;
         }
-        return this.pilhaLinha[this.posicacaoPilhaColuna];
+        return this.pilhaLinha[this.posicaoPilhaLinha];
     }
 
     public Object pop() {
         if (isEmpty()) {
             return null;
         }
-        return this.pilhaLinha[this.posicacaoPilhaColuna--];
+        return this.pilhaLinha[this.posicaoPilhaLinha--];
     }
 
     public void push(Object valor) {
-        if (this.posicacaoPilhaColuna < this.pilhaLinha.length - 1) {
-            this.pilhaLinha[++posicacaoPilhaColuna] = valor;
+        if (this.posicaoPilhaLinha < this.pilhaLinha.length - 1) {
+            this.pilhaLinha[++posicaoPilhaLinha] = valor;
         }
     }
 
-
+    @Override
+    public String toString() {
+        String out = "[";
+        if(getSize() > 0) {
+            out += this.pilhaLinha[0];
+        }
+        out += "]";
+        return out;
+    }
 
 }
