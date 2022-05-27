@@ -28,16 +28,16 @@ public class Labirinto {
 
 
     /*String[][] map = {
-            {"#","#","#","#","#","#","#","#","#","#"},
-            {"#","E","#"," "," ","#"," "," "," ","#"},
-            {"#"," ","#"," ","#","#","#"," ","#","#"},
-            {"#"," ","#"," ","#","#","#"," ","#","#"},
-            {"#"," ","#"," ","#","#","#"," ","#","#"},
-            {"#"," ","#"," "," "," ","#","#","#","#"},
-            {"#"," "," "," ","#"," "," "," ","S","#"},
-            {"#"," ","#","#","#"," ","#"," ","#","#"},
-            {"#"," ","#","#","#"," ","#"," ","#","#"},
-            {"#","#","#","#","#","#","#","#","#","#"}
+            {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#"},
+            {"#", "E", "#", " ", " ", "#", " ", " ", " ", "#"},
+            {"#", " ", "#", " ", "#", "#", "#", " ", "#", "#"},
+            {"#", " ", "#", " ", "#", "#", "#", " ", "#", "#"},
+            {"#", " ", "#", " ", "#", "#", "#", " ", "#", "#"},
+            {"#", " ", "#", " ", " ", " ", "#", "#", "#", "#"},
+            {"#", " ", " ", " ", "#", " ", " ", " ", "S", "#"},
+            {"#", " ", "#", "#", "#", " ", "#", " ", "#", "#"},
+            {"#", " ", "#", "#", "#", " ", "#", " ", "#", "#"},
+            {"#", "#", "#", "#", "#", "#", "#", "#", "#", "#"}
 
     };*/
 
@@ -85,16 +85,8 @@ public class Labirinto {
     }
 
 
-    public boolean saida(){
-        if (Objects.equals(map[coluna][linha], "S")){
-            System.out.println("Parabéns, você encontrou a saída");
-            return true;
-        }
-        return false;
-    }
-
     public void verificaCaminho() throws InterruptedException {
-        while (Objects.equals(map[coluna][linha], "S")){
+        while (!filaColuna.isEmpty() && !filaLinha.isEmpty()){
 
 
             System.out.println(filaLinha.toString());
@@ -125,9 +117,9 @@ public class Labirinto {
 
 
     public void printLabirinto (){
-        for (int x = 0; x < map.length; x++){
-            for (int y = 0; y < map.length; y++){
-                System.out.print(map[x][y] + " ");
+        for (String[] strings : map) {
+            for (int y = 0; y < map.length; y++) {
+                System.out.print(strings[y] + " ");
             }
             System.out.println();
         }
