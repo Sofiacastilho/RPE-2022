@@ -1,4 +1,4 @@
-package trabalhoLabirinto;
+package trabalhoLabirintoPilha;
 
 public class Labirinto {
 

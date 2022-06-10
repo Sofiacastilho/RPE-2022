@@ -1,4 +1,4 @@
-package trabalhoFila;
+package trabalhoLabirintoFila;
 
 import java.util.Locale;
 import java.util.Scanner;

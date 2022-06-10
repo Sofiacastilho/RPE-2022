@@ -1,4 +1,4 @@
-package trabalhoFila;
+package trabalhoLabirintoFila;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package trabalhoFila;
+package trabalhoLabirintoFila;
 
 public class FilaLinha {
     class No{
