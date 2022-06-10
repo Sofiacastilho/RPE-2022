@@ -1,12 +1,12 @@
 package trabalhoLista;
 
-public class NoDuplo<T> {
+public class No<T> {
 
     private T data;
-    private NoDuplo<T> noProximo;
-    private NoDuplo<T> noAnterior;
+    private No<T> noProximo;
+    private No<T> noAnterior;
 
-    public NoDuplo(T conteudo) {
+    public No(T conteudo) {
         this.data = conteudo;
     }
 
@@ -18,19 +18,19 @@ public class NoDuplo<T> {
         this.data = data;
     }
 
-    public NoDuplo<T> getNoProximo() {
+    public No<T> getNoProximo() {
         return noProximo;
     }
 
-    public void setNoProximo(NoDuplo<T> noProximo) {
+    public void setNoProximo(No<T> noProximo) {
         this.noProximo = noProximo;
     }
 
-    public NoDuplo<T> getNoAnterior() {
+    public No<T> getNoAnterior() {
         return noAnterior;
     }
 
-    public void setNoAnterior(NoDuplo<T> noPrevio) {
+    public void setNoAnterior(No<T> noPrevio) {
         this.noAnterior = noPrevio;
     }
 

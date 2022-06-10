@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class ListaDuplamenteEncadeada<T> {
 
-    private NoDuplo<T> base;
-    private NoDuplo<T> top;
+    private No<T> base;
+    private No<T> top;
     private int size;
 
     public ListaDuplamenteEncadeada(){
@@ -16,7 +16,7 @@ public class ListaDuplamenteEncadeada<T> {
 
     //Adiciona ao FINAL da lista
     public void add(T elemento){
-        var no = new NoDuplo<>(elemento);
+        var no = new No<>(elemento);
 
         if (isEmpty()){
             base = no;
@@ -37,7 +37,7 @@ public class ListaDuplamenteEncadeada<T> {
             return;
         }
 
-        var no = new NoDuplo<>(elemento);
+        var no = new No<>(elemento);
         var proximo = getNo(pos);
         var anterior = proximo.getNoAnterior();
         no.setNoAnterior(anterior);
@@ -53,7 +53,7 @@ public class ListaDuplamenteEncadeada<T> {
         size = size + 1;
     }
 
-    private T remove(NoDuplo<T> no) {
+    private T remove(No<T> no) {
 
         T dado = no.getData();
         var anterior = no.getNoAnterior();
@@ -82,12 +82,12 @@ public class ListaDuplamenteEncadeada<T> {
     }
 
 
-    private NoDuplo<T> getNo(int pos){
+    private No<T> getNo(int pos){
         Objects.checkIndex(pos,size);
         int meio = size/2;
 
         if (pos <= meio){ //do meio para primeira pos
-            NoDuplo<T> atual = base;
+            No<T> atual = base;
             for (int i = 0; i< pos; i++){
                 atual = atual.getNoProximo();
             }
@@ -132,7 +132,7 @@ public class ListaDuplamenteEncadeada<T> {
     @Override
     public String toString() {
         StringBuilder strRetorno = new StringBuilder();
-        NoDuplo<T> noAuxiliar = base;
+        No<T> noAuxiliar = base;
         for(int i = 0; i< getSize(); i++){
             strRetorno.append("[").append(noAuxiliar.getData()).append("]<-->");
             noAuxiliar = noAuxiliar.getNoProximo();
