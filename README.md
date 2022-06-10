@@ -7,12 +7,11 @@
 Ambos os trabalhos foram desenvolvidos na linguagem de programação Java.
 
 ## Trabalho Prático 1 - Labirinto (usando pilha)
-Este trabalho tem como objetivo construir um labirinto usando os conceitos passados de pilha.
+Utilizando pilha, você deve implementar um código que, dado um labirinto qualquer com entrada e saída, seja capaz de encontrar a saída para o labirinto.
 
-
-Ao executar o programa, o labirinto deve 
-
-
+* A pilha funcionará como a “memória” de onde passamos;
+* A cada casa, navegaremos entre 4 direções, em ordem;
+* Iniciamos pela casa da entrada, marcando-a como visitada. O computador testa as posições direita, esquerda, cima e baixo. Verificando disponibilidade para andar, o computador empilha 
 
 
 
