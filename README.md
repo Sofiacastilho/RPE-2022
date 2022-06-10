@@ -3,8 +3,9 @@
 
 - Trabalho Prático 1 - Labirinto (usando pilha)
 - Trabalho Prático 2 - Labirinto (usando fila)
+- Trabalho Prático 3 - Implementação Lista Duplamente Encadeada
 
-Ambos os trabalhos foram desenvolvidos na linguagem de programação Java.
+Todos os trabalhos foram desenvolvidos na linguagem de programação Java.
 
 ## Trabalho Prático 1 - Labirinto (usando pilha)
 Utilizando pilha, você deve implementar um código que, dado um labirinto qualquer com entrada e saída, seja capaz de encontrar a saída para o labirinto.
@@ -32,7 +33,7 @@ Nesse trabalho você deve utilizar fila para o armazenamento das posições.
 
 
 
-## Trabalho Prático 2 - Implementação Lista Duplamente Encadeada
+## Trabalho Prático 3 - Implementação Lista Duplamente Encadeada
 Esse trabalho consiste em fazer a implementação de uma lista duplamente encadeada com Generics.
 
 A implementação deve conter os seguintes métodos:
